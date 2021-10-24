@@ -14,10 +14,10 @@ router.get('/', readRecipes)
 router.post('/', createRecipe)
 
 // Update Recipe
-router.put('/recipe/:id', updateRecipe)
+router.put('/recipes/:id', updateRecipe)
 
 // Delete a recipe
-router.delete('/recipe/:id', deleteRecipe)
+router.delete('/recipes/:id', deleteRecipe)
 
 module.exports = router
 

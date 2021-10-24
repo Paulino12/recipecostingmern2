@@ -45,7 +45,7 @@ function Costing() {
             })
             .catch((error) => { console.log(error) })
         }else{
-            axios.put(`${url}/recipe/${newRecipeId}`, { recipeName: recipeName })
+            axios.put(`${url}/recipes/${newRecipeId}`, { recipeName: recipeName })
             .then((response) => {
                 setShowNotification(true)
                 setNotification(`"${recipeName}" successfully updated`)

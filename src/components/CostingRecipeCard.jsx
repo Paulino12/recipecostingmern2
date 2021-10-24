@@ -25,7 +25,7 @@ function CostingRecipeCard({ recipe, recipeId }) {
 
     // Delete recipe
     const deleteRecipe = () => {
-        axios.delete(`${url}/recipe/${recipeId}`)
+        axios.delete(`${url}/recipes/${recipeId}`)
             .then((response) => {
                 setShowNotification(true)
                 setNotification(`"${recipe}" successfully deleted`)

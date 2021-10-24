@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 dotenv.config()
 // Importing Routes
 const recipesRouter = require('./routes/recipesRoutes')
+const ingredientsRouter = require('./routes/ingredientsRoutes')
 
 const app = express()
 
@@ -13,8 +14,11 @@ const app = express()
 app.use(express.json({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
+
 // Implementing routes
 app.use('/', recipesRouter)
+app.use('/', ingredientsRouter)
+
 
 const PORT = process.env.PORT || 8000
 const dbConnexion = process.env.RECIPECOSTINGMERN_URI
@@ -29,6 +33,10 @@ mongoose.connect(dbConnexion)
     .catch((err) => {
         res.status(400).json({ error: err.message })
     })
+
+
+
+
 
 
 
