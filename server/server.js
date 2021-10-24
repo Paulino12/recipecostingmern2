@@ -17,9 +17,10 @@ app.use(cors())
 app.use('/', recipesRouter)
 
 const PORT = process.env.PORT || 8000
+const dbConnexion = process.env.RECIPECOSTINGMERN_URI
 
 // Connecting to database at MongoDb
-mongoose.connect('mongodb+srv://ytem12:Magniaga12@cluster0.wil2c.mongodb.net/recipecosting?retryWrites=true&w=majority')
+mongoose.connect(dbConnexion)
     .then((result) => {
         app.listen(PORT, () => {
             console.log(`Server listening at port: ${PORT}`);
