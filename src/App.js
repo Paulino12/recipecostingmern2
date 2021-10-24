@@ -1,11 +1,19 @@
+import React from 'react'
 import './App.css';
+import Nav from './components/Nav';
+import Costing from './components/Costing';
+import RecipesContextProvider from './contexts/RecipesContext';
 
 function App() {
+
+  
   return (
-    <div>
-      <h2>My Mern App</h2>
-      <input type="text" className="form-control w-50" />
-    </div>
+    <RecipesContextProvider>
+      <div>
+        <Nav />
+        <Costing />
+      </div>
+    </RecipesContextProvider>
   );
 }
 

@@ -1,5 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import NotificationsContextProvider from './contexts/NotificationsContext'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+    <NotificationsContextProvider>
+        <App />
+    </NotificationsContextProvider>, document.getElementById('root'))

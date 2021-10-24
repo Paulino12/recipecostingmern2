@@ -2,6 +2,13 @@
   cursor: pointer;
 }
 
+.notificationComponent {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  width: 50%;
+}
+
 .form-control:focus {
-  box-shadow: none;
+  box-shadow: none !important;
 }
