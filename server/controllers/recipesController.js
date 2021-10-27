@@ -23,6 +23,17 @@ const createRecipe = async (req, res) => {
     
 }
 
+// Read specific recipe
+const readSpecificRecipe = async (req, res) => {
+    try {
+        const recipeId = req.params.id
+        const foundRecipe = await Recipe.findById(recipeId)
+        res.status(201).json(foundRecipe)  
+    } catch (error) {
+        res.status(400).json({ error: error.message })
+    }
+}
+
 // Update recipe
 const updateRecipe = async (req, res) => {
     try {
@@ -48,5 +59,5 @@ const deleteRecipe = async (req, res) => {
 }
 
 module.exports = {
-    readRecipes, createRecipe, updateRecipe, deleteRecipe
+    readRecipes, createRecipe, readSpecificRecipe, updateRecipe, deleteRecipe
 }

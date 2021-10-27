@@ -11,25 +11,32 @@ function RecipesContextProvider({ children }) {
         axios.get(url)
         .then((response) => {
             setRecipes(response.data)
-            console.log("fetched")
         })
         .catch((error) => { console.log(error) })
     }
+    const [isLoading, setIsLoading] = useState(false)
     const [submitBtn, setSubmitBtn] = useState('Add Recipe')
     const [showCancelEditBtn, setShowCancelEditBtn] = useState(false)
     const [recipes, setRecipes] = useState([])
-    const [newRecipeId, setNewRecipeId] = useState('')
+    const [clickedRecipeId, setClickedRecipeId] = useState('')
     const [recipeName, setRecipeName] = useState('')
+    const [clickedRecipeName, setClickedRecipeName] = useState('')
+    const [showRecipeData, setShowRecipeData] = useState(false)
+    const [recipeDesc, setRecipeDesc] = useState('')
 
     return (
         <div>
             <RecipesContext.Provider value={{
+                isLoading, setIsLoading,
                 showCancelEditBtn, setShowCancelEditBtn,
                 recipes, setRecipes, 
                 recipeName, setRecipeName, 
-                newRecipeId, setNewRecipeId,
+                clickedRecipeId, setClickedRecipeId,
+                clickedRecipeName, setClickedRecipeName,
                 submitBtn, setSubmitBtn,
-                url, fetchRecipes
+                url, fetchRecipes, 
+                showRecipeData, setShowRecipeData,
+                recipeDesc, setRecipeDesc
             }}>
                 { children }
             </RecipesContext.Provider>

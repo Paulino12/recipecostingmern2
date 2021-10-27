@@ -3,7 +3,7 @@ const Ingredient = require('../models/Ingredient')
 // Read Ingredients
 const readIngredients = async (req, res) => {
     try {
-        const ingredients = await Ingredient.find({recipe: req.params.recipeId})
+        const ingredients = await Ingredient.find({recipe: req.params.recipeId}).sort({ createdAt: -1})
         res.json(ingredients)
     } catch (error) {
         res.status(400).json({ error: error.message })
