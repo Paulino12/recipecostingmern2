@@ -30,9 +30,10 @@ function CostingRecipeDesc({ recipeId, recipeName }) {
             setIsLoading(false)
         })
         .catch((error) => { console.log(error) })
+        console.log("desc");
         // Line below removes useeffect warning about adding dependency
         // eslint-disable-next-line
-    }, [recipeId, newRecipeDesc.recipeDescription, isLoading])
+    }, [recipeId, isLoading, newRecipeDesc.recipeDescription])
 
     const recipeDate = new Date(newRecipeDesc.createdAt)
 

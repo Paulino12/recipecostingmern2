@@ -52,7 +52,7 @@ function Costing() {
             .catch((error) => { console.log(error) })
         }else{
             axios.put(`${url}/recipes/${clickedRecipeId}`, { 
-                recipeName: recipeName, recipeDescription: ""
+                recipeName: recipeName
              })
             .then((response) => {
                 setShowNotification(true)
@@ -148,7 +148,6 @@ function Costing() {
                             <div className="container">
                                 <CostingRecipeIngredients recipeId={clickedRecipeId} recipeName={clickedRecipeName} />
                             </div>
-                            
                         </>
                     }
                 </div>
